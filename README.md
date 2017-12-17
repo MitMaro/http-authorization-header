@@ -167,7 +167,7 @@ Development is done using Node 8 and NPM 5, and tested against both Node 6 and N
 ## License
 
 Based on [auth-header][8] which was licensed under [CC0-1.0][9]. This project is released under the
-[ISC license][LICENSE].
+[ISC license](LICENSE).
 
 [1]:https://david-dm.org/MitMaro/http-authorization-header
 [2]:https://travis-ci.org/MitMaro/http-authorization-header
