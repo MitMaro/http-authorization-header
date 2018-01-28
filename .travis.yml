@@ -12,24 +12,24 @@ stages:
   - test
   - deploy
 jobs:
-  include:
-    - stage: test
-      node_js: 6
-      script: ./scripts/test.bash :coverage
-    - stage: test
-      node_js: 8
-      before_script: npm install coveralls
-      script: ./scripts/lint.bash
-      script: ./scripts/test.bash :coverage
-      after_script: nyc report --reporter=text-lcov | coveralls
-    - stage: deploy
-      node_js: 8
-      script: skip
-      deploy:
-        provider: npm
-        email: mitmaro@gmail.com
-        api_key:
-            secure: ZkGS3CEjNSWGafzMESMEucYx4wmROiHbjvy6ytdM5w6jsGFOX5EfxUjemxftxs+8v686BDHtklOPmWox9iyc2jk3RvFbBdlBg5QI9OwbQrshfJA8nCDQZfjrWe355zwMhHLE2eoNRzmZi8nuPb3ovybZWTdSL+Sk9vRsDcW+P9112pGdOa0cJ2M1ORewiz6x7fpRKJK0sODgaro+nfabfG5uWEle7PnqNYoVqgeoqqzQ5Az5sUlws0l3K3LDUgY8ZmMSD3Z/aAVC9cp9Byd+RrpssTRjrm236dCpsQ4sPQQSjlzgiowPa+sgkdHxW89q6dium7oLazG2cxRs4kQ+OFNIycyAHg/JQ9X0Q/XX+DH3NgjHGc+oF36m8dViRsXv1dpX/cWnCPyRflF1Z9c8I/1rYT+fB6AvIbywDjuxuOtxEQKNZOkLVD4VdQoysc8HFuSW1ujJsK99eGDiziftarXsF7Kapu9LWTmoFj7BYGDOuicRHic9EiBsC/0hfCZuEfbF3+zQ6w6uwu2R5tpv7jz8L/pYNSwqROG+GVoHxT8iWTYeBNxekXW6knW719zh4nU4lJmIex9v/S3o74UGQ51VIMzoo2+1W2gjdJIy13JjImbXRkFBfIBpfLPxhGcQRVbyA+j66grNTZsWwb4/3m+zNexXcSrRPPa0IJpV4Y4=
-        on:
-            tags: true
-            repo: MitMaro/http-authorization-header
+    include:
+        - stage: test
+          node_js: 6
+          script: ./scripts/test.bash :coverage
+        - stage: test
+          node_js: 8
+          before_script: npm install coveralls
+          script: ./scripts/lint.bash
+          script: ./scripts/test.bash :coverage
+          after_script: nyc report --reporter=text-lcov | coveralls
+        - stage: deploy
+          node_js: 8
+          script: skip
+          deploy:
+              provider: npm
+              email: mitmaro@gmail.com
+              api_key:
+                  secure: j6olF/ELBCQ9fSspaT6D1cVOw3Tci5LLvUkrShLX7mIjMJs+7ErhuqcvxO//iJ7RCkBwi9YMfpShbShP+1u7TJ7kKDXh/wmigyV0+xfzYD4awqhGJfMrvgIPavL1vtMBLbw9Dh1nqWrFCLDrY0ZVlWlM/AY7zmBO/LDQMP9l7INOSW2YYkWPOoNM1mQSn/qkCjbvGKfRLcwXGew2iIEiD8m/eF9/ttH7nS9cFafhrapkmkS9Qbf1oFm5QNSVzQiFLC14pU4ZNfi+d3BS35mghtLa/E5kA1zvnZloSXjO44w1lMi/l/H9THkrILErVbPQpk+BVpVurcxoLz3cDoOHADWKDJqfGiEZ+KnVwMV6izOiw/yFDV6dYPSwFtEff7+qZkcDQp+C7KMYqEul7ZUrF4O5faNwLkYLv6nt9GhW4ZzzoTk56+9rSLlfS9/ST0QcBXQ6TsqRSh2oe+AEEkM49QnB+zfEZN4qUrWRC+Z9kT1W7KFoSNziTD14q+JdTG594nSpFmAOU+6NIzYK62iDnhyOcmvo8WL1dCj7D142QigYfhLiQvhjURsFPy+Je0e7h8kX807uq7gZJL5AP8EFPS892Rkz3NWd3g5zKG0nrJGibq6RtYy7N51pewFVIThcuICyuY4JdExGFh8H/wbOD589ZWIMCZ5WTuWjVGt5d+4=
+              on:
+                  tags: true
+                  repo: MitMaro/http-authorization-header
