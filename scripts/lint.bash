@@ -2,6 +2,8 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && source "./common.bash"
 
-info "Starting lint"
-eslint . "$@"
-info "Lint complete"
+info "Running ESLint"
+eslint "$@" .
+
+info "Running TSLint"
+tslint --format verbose --config tslint.json "$@" 'src/**/*.ts'

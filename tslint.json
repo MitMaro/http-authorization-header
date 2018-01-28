@@ -1,0 +1,13 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "callable-types": false,
+        "indent": [true, "tabs"],
+        "max-classes-per-file": [false]
+    },
+    "rulesDirectory": []
+}
