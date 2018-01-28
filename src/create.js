@@ -11,8 +11,8 @@ const InvalidInputError = require('./error/invalid-input-error');
 function quoteString(str) {
 	let value = str;
 	let index = 0;
-	while (index < str.length) {
-		if (value.charAt(index) === '"') {
+	while (index < value.length) {
+		if (value[index] === '"') {
 			value = `${value.slice(0, index)}\\${value.slice(index)}`;
 			index++;
 		}

@@ -47,6 +47,6 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "jeepers": "^0.1.0"
+    "@mitmaro/errors": "^1.0.0"
   }
 }
