@@ -31,6 +31,18 @@ describe('/src/create', function () {
 				value: 'foo bar="\\"baz",bar="b\\"az",bar="ba\\"z",bar="baz\\""',
 			},
 			{
+				description: 'with only quotes in value',
+				scheme: 'foo',
+				params: [['bar', '"']],
+				value: 'foo bar="\\""',
+			},
+			{
+				description: 'with empty value',
+				scheme: 'foo',
+				params: [['bar', '']],
+				value: 'foo bar=""',
+			},
+			{
 				description: 'with mixed values',
 				scheme: 'foo',
 				params: [['bar', 'b"az'], ['bar', 'baz']],

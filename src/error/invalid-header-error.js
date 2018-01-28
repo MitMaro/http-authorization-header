@@ -1,5 +1,5 @@
 'use strict';
 
-const {RuntimeError} = require('jeepers');
+const {RuntimeError} = require('@mitmaro/errors');
 
 module.exports = class InvalidHeaderError extends RuntimeError {};
