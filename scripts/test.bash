@@ -6,19 +6,19 @@ export NODE_ENV=test
 
 info "Starting tests"
 
-case "${1-""}" in
+task="${1-}"
+shift 1
+
+case "$task" in
 	':unit')
-		shift
 		mocha "$@"
 		;;
 	':coverage'|':unit:coverage')
-		shift
 		nyc mocha "$@"
 		;;
 	''|':all')
-		shift
-		nyc mocha "$@"
+		nyc mocha
 		;;
-	*) fatal "Invalid test target $1" "$EXIT_CODE_INVALID_STATE"
+	*) fatal "Invalid test target $task" "$EXIT_CODE_INVALID_STATE"
 esac
 info "Tests complete"
