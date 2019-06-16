@@ -1,6 +1,10 @@
-module.exports = {
-	extends: [
-		'mitmaro/config/mocha',
-		'mitmaro/config/chai'
+'use strict';
+
+const mitmaroEslintConfig = require('eslint-config-mitmaro');
+
+module.exports = mitmaroEslintConfig(
+	[
+		'mocha',
+		'chai',
 	],
-};
+);

@@ -1,8 +1,13 @@
-module.exports = {
-	root: true,
-	extends: [
-		'mitmaro',
-		'mitmaro/config/ecmascript-7',
-		'mitmaro/config/node',
+'use strict';
+
+const mitmaroEslintConfig = require('eslint-config-mitmaro');
+
+module.exports = mitmaroEslintConfig(
+	[
+		'node',
+		'ecmascript-9',
 	],
-};
+	{
+		root: true,
+	},
+);
